@@ -1,16 +1,16 @@
 import java.util.UUID;
 
-public abstract class Animal {
+public abstract class Animals {
     protected String id;
     protected String animalClass;
 
     // Родительский класс "животные"
-    protected Animal(String animalClass) {
+    protected Animals(String animalClass) {
         this.animalClass = animalClass;
         this.id = UUID.randomUUID().toString();
     }
 
-    protected Animal() {
+    protected Animals() {
         this.animalClass = animalClass;
         this.id = UUID.randomUUID().toString();
     }

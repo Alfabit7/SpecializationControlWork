@@ -2,12 +2,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class HomeAnimals extends Animals {
+public abstract class PackAnimals extends Animals {
     protected String name;
     protected LocalDate dateOfBirthDay;
-    protected List<String> commands = new ArrayList<>();
+    private List<String> commands = new ArrayList<>();
 
-    protected HomeAnimals() {
+    protected PackAnimals() {
         this.name = name;
         this.dateOfBirthDay = LocalDate.now();
         this.commands = new ArrayList<>();
