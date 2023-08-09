@@ -1,11 +1,11 @@
 
-public class Dogs extends HomeAnimals {
+public class Hamsters extends HomeAnimals {
 
-    public Dogs() {
+    public Hamsters() {
         this.name = getClass().getName();
-        this.commands.add("Сидеть");
-        this.commands.add("Апорт");
-        this.commands.add("Охранять");
+        this.commands.add("Спать");
+        this.commands.add("Бежать");
+        this.commands.add("Есть");
     }
 
     @Override

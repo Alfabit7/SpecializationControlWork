@@ -17,7 +17,7 @@ public abstract class Animals {
 
     @Override
     public String toString() {
-        return String.format("id: %s\n%sClass: ", id, animalClass);
+        return String.format("id: %s: ", id);
     }
 
 }
