@@ -13,7 +13,7 @@ public class Menu {
             switch (choice) {
                 case 1:
                     System.out.println(
-                            "Выберите нужный пункт:\n1. Dog\n2. Cat\n3. Hamsters\n4. Tiger\n5. Chicken\n6. Stork\n7. Назад");
+                            "Выберите нужный пункт:\n1. Dog\n2. Cat\n3. Hamsters\n4. Camel\n5. Horse\n6. Donkey\n7. Назад");
                     int x = in.nextInt();
                     switch (x) {
                         case 1:
@@ -26,13 +26,13 @@ public class Menu {
                             arr.add(new Hamsters());
                             break;
                         case 4:
-                            // arr.add(new Tiger());
+                            arr.add(new Camel());
                             break;
                         case 5:
-                            // arr.add(new Chicken());
+                            arr.add(new Horse());
                             break;
                         case 6:
-                            // arr.add(new Strok());
+                            arr.add(new Donkey());
                             break;
                         case 7:
                             // menu(storage);

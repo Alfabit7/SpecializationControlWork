@@ -6,7 +6,6 @@ import java.util.List;
 
 public abstract class HomeAnimals extends Animals {
     protected String name;
-    // protected Date dateOfBirthDay = new Date();
     protected LocalDate dateOfBirthDay = LocalDate.now();
     protected String formattedString;
     protected List<String> commands = new ArrayList<>();
@@ -22,9 +21,6 @@ public abstract class HomeAnimals extends Animals {
 
     @Override
     public String toString() {
-        // return String.format("name: %s\ndateOfBirthDay: %s\n", name, formattedString,
-        // super.toString());
-        // return String.format("AnimalClass: %s\n", animalClass, super.toString());
         return String.format("\nAnimalClass: %s\n%s\n", animalClass, super.toString());
     }
 
