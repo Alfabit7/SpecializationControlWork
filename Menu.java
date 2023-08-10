@@ -1,11 +1,10 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
-import javax.swing.text.View;
+// import java.io.BufferedWriter;
+// import java.io.FileWriter;
+// import java.io.IOException;
+// import java.util.ArrayList;
+// import java.util.List;
+import java.util.Scanner;
 
 public class Menu {
 
@@ -24,9 +23,6 @@ public class Menu {
             end = 7;
             String inputUser = in.nextLine();
             int choice = ValidationInput(inputUser, start, end);
-            // if (choice == -1) {
-            // in.close();
-            // }
             switch (choice) {
                 case 1:
                     System.out.println(
@@ -129,23 +125,18 @@ public class Menu {
                                 + " до " + end);
                         System.out.println();
                     }
-
                 case 6:
                     // Сохранить в файл
                     arr.saveToFile();
-
                 case 7:
-
                     break;
                 default:
                     menu(arr);
                     break;
             }
             if (choice == 7) {
-
                 break;
             }
-
         }
 
     }
@@ -164,7 +155,7 @@ public class Menu {
                     "\nВводить можно только цифры из диапазона меню!" + " от " + start + " до " + end
                             + "\nПовторите ввод!\n");
             userInt = -1;
-            // SelectMenu(View2.ShowMenu());
+
         }
 
         return userInt;
