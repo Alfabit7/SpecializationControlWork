@@ -47,69 +47,70 @@ public class Menu {
                     }
                     break;
                 case 2:
-                    start = 0;
                     end = arr.getSizeArr();
-
-                    System.out.print("Введите индекс нужного животного в диапазоне от " + start + " до " + end + ": ");
+                    System.out.print("Введите индекс нужного животного в диапазоне от 0" +
+                            " до " + end + ": ");
                     inputUser = in.nextLine();
                     int idx = ValidationInput(inputUser, start, end);
+                    idx = userInputIdxAnimal(end);
+                    elAnimal = arr.getElemet(idx);
+                    System.out.println("Вы хотите поменять класс этому животному: ");
+                    System.out.println(elAnimal);
+                    System.out.print("Введите нужный класс: ");
+                    ((Animals) elAnimal).setClassAnimal(inputUser);
+                    System.out.println();
+                    System.out.print("Класс успешно изменен!");
+                    System.out.println("========================");
+                    System.out.println(elAnimal);
+                    System.out.println("Новый класс: " + elAnimal.getClass().getSuperclass());
 
-                    if (checkedSizeArr(idx, start, end)) {
-                        elAnimal = arr.getElemet(idx);
-                        System.out.println();
-                        System.out.println("Вы хотите поменять класс этому животному: ");
-                        System.out.println(elAnimal);
-                        System.out.print("Введите нужный класс: ");
-                        inputUser = in.nextLine();
-                        ((Animals) elAnimal).setClassAnimal(inputUser);
-                        System.out.println();
-                        System.out.print("Класс успешно изменен!");
-                        System.out.println("========================");
-                        System.out.println(elAnimal);
-                        System.out.println("Новый класс: " + elAnimal.getClass().getSuperclass());
-                    } else {
-                        System.out.println();
-                        System.out.println("Вы ввели некорректно значение!  Введите цифру в диапазоне от: " + start
-                                + " до " + end);
-                        System.out.println();
-                    }
+                    // start = 0;
+                    // end = arr.getSizeArr();
+
+                    // System.out.print("Введите индекс нужного животного в диапазоне от " + start +
+                    // " до " + end + ": ");
+                    // inputUser = in.nextLine();
+                    // int idx = ValidationInput(inputUser, start, end);
+
+                    // if (checkedSizeArr(idx, start, end)) {
+                    // elAnimal = arr.getElemet(idx);
+                    // System.out.println();
+                    // System.out.println("Вы хотите поменять класс этому животному: ");
+                    // System.out.println(elAnimal);
+                    // System.out.print("Введите нужный класс: ");
+                    // inputUser = in.nextLine();
+                    // ((Animals) elAnimal).setClassAnimal(inputUser);
+                    // System.out.println();
+                    // System.out.print("Класс успешно изменен!");
+                    // System.out.println("========================");
+                    // System.out.println(elAnimal);
+                    // System.out.println("Новый класс: " + elAnimal.getClass().getSuperclass());
+                    // } else {
+                    // System.out.println();
+                    // System.out.println("Вы ввели некорректно значение! Введите цифру в диапазоне
+                    // от: " + start
+                    // + " до " + end);
+                    // System.out.println();
+                    // }
                     break;
                 case 3:
-                    start = 0;
+                    // Показать команды животного
                     end = arr.getSizeArr();
-                    System.out.print("Введите индекс нужного животного в диапазоне от " + start + " до " + end + ": ");
-                    inputUser = in.nextLine();
-                    idx = ValidationInput(inputUser, start, end);
-
-                    if (checkedSizeArr(idx, start, end)) {
-                        System.out.println();
-                        System.out.println("Животное: " + arr.getElemet(idx).getClass().getName());
-                        System.out.print("Умеет выполнять эти команды: ");
-                        elAnimal = arr.getElemet(idx);
-                        ((Animals) elAnimal).showCommands();
-                        System.out.println();
-
-                    } else {
-                        System.out.println();
-                        System.out.println("Вы ввели некорректно значение!  Введите цифру в диапазоне от: " + start
-                                + " до " + end);
-                        System.out.println();
-                    }
+                    System.out.print("Введите индекс нужного животного в диапазоне от " + start +
+                            " до " + end + ": ");
+                    idx = userInputIdxAnimal(end);
+                    elAnimal = arr.getElemet(idx);
+                    ((Animals) elAnimal).showCommands();
+                    System.out.println();
                     break;
                 case 4:
                     arr.showAll();
                     break;
                 case 5:
-                    // System.out.print("Введите индекс нужного животного в диапазоне от " + start +
-                    // " до " + end + ": ");
-                    // start = 0;
-                    // end = arr.getSizeArr();
-                    // inputUser = in.nextLine();
-                    // idx = ValidationInput(inputUser, start, end);
                     end = arr.getSizeArr();
                     idx = userInputIdxAnimal(end);
                     elAnimal = arr.getElemet(idx);
-                    System.out.print("Введите новую команду животному");
+                    System.out.print("Введите новую команду животному: ");
                     inputUser = in.nextLine();
                     ((Animals) elAnimal).setNewCommands(inputUser);
                     break;
@@ -117,15 +118,16 @@ public class Menu {
 
                     break;
                 case 7:
+                    in.close();
                     break;
                 default:
                     menu(arr);
                     break;
             }
-            if (choice == 7) {
-                in.close();
-                break;
-            }
+            // if (choice == 7) {
+            // in.close();
+            // break;
+            // }
         }
 
     }
@@ -162,11 +164,12 @@ public class Menu {
 
     public static int userInputIdxAnimal(int end) {
 
-        System.out.println("Введите индекс нужного животного в диапазоне от " + start + " до " + end + ": ");
         int start = 0;
+        System.out.println("Введите индекс нужного животного в диапазоне от " + start + " до " + end + ": ");
         Scanner in = new Scanner(System.in);
         String inputUser = in.nextLine();
         int idx = ValidationInput(inputUser, start, end);
+        in.close();
         return start;
     }
 
