@@ -1,3 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +33,21 @@ public class Zoo {
 
     public Object getElemet(int idx) {
         return animals.get(idx);
+    }
+
+    public void saveToFile() {
+
+        String filename = "list.txt";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            for (Animals animal : animals) {
+                writer.write(animal.toString());
+                writer.newLine();
+            }
+            System.out.println("Список животных успешно сохранен в файл " + filename);
+        } catch (IOException e) {
+            System.out.println("Ошибка при сохранении списка животных: " +
+                    e.getMessage());
+        }
     }
 
 }

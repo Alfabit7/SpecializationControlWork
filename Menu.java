@@ -1,9 +1,16 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.text.View;
 
 public class Menu {
 
     public static void menu(Zoo arr) {
-        int arrSize;
+        int arrSize = -1;
         Object elAnimal;
         int start = 1;
         int end = 7;
@@ -124,15 +131,18 @@ public class Menu {
                     }
 
                 case 6:
-                    break;
+                    // Сохранить в файл
+                    arr.saveToFile();
+
                 case 7:
-                    in.nextLine();
+
                     break;
                 default:
                     menu(arr);
                     break;
             }
             if (choice == 7) {
+
                 break;
             }
 
