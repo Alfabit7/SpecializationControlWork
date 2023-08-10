@@ -28,6 +28,10 @@ public abstract class Animals {
         }
     }
 
+    protected void setNewCommands(String command) {
+        commands.add(command);
+    }
+
     @Override
     public String toString() {
         return String.format("id: %s: ", id);

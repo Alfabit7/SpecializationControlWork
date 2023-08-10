@@ -78,8 +78,7 @@ public class Menu {
                 case 3:
                     start = 0;
                     end = arr.getSizeArr();
-                    System.out.println("Вы ввели некорректно значение!  Введите цифру в диапазоне от: " + start
-                            + " до " + end);
+                    System.out.print("Введите индекс нужного животного в диапазоне от " + start + " до " + end + ": ");
                     inputUser = in.nextLine();
                     idx = ValidationInput(inputUser, start, end);
 
@@ -98,18 +97,19 @@ public class Menu {
                         System.out.println();
                     }
                     break;
-
                 case 4:
                     arr.showAll();
                     break;
                 case 5:
-                    System.out.println("Введите индекс нужного животного:\n");
-                    // int index = in.nextInt();
-                    // arr.voice(index);
-
+                    System.out.print("Введите индекс нужного животного в диапазоне от " + start + " до " + end + ": ");
+                    start = 0;
+                    end = arr.getSizeArr();
                     inputUser = in.nextLine();
-                    // end = arrSize;
                     idx = ValidationInput(inputUser, start, end);
+                    elAnimal = arr.getElemet(idx);
+                    System.out.print("Введите новую команду животному");
+                     inputUser = in.nextLine();
+                    ((Animals) elAnimal).setNewCommands(inputUser);
                     break;
                 case 6:
                     // arr.voiceAll();
@@ -157,5 +157,6 @@ public class Menu {
             return false;
         }
     }
+    public 
 
 }
