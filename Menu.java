@@ -51,16 +51,23 @@ public class Menu {
                     start = 0;
                     end = arr.getSizeArr();
 
-                    System.out.println("Введите индекс нужного животного: ");
-                    System.out.println("Длина массива: " + end);
+                    System.out.print("Введите индекс нужного животного в диапазоне от " + start + " до " + end + ": ");
                     inputUser = in.nextLine();
                     int idx = ValidationInput(inputUser, start, end);
 
                     if (checkedSizeArr(idx, start, end)) {
                         elAnimal = arr.getElemet(idx);
+                        System.out.println();
+                        System.out.println("Вы хотите поменять класс этому животному: ");
                         System.out.println(elAnimal);
-                        // inputUser = in.nextLine();
-                        System.out.println(elAnimal.getClass().getSuperclass().getSuperclass());
+                        System.out.print("Введите нужный класс: ");
+                        inputUser = in.nextLine();
+                        ((Animals) elAnimal).setClassAnimal(inputUser);
+                        System.out.println();
+                        System.out.print("Класс успешно изменен!");
+                        System.out.println("========================");
+                        System.out.println(elAnimal);
+                        System.out.println("Новый класс: " + elAnimal.getClass().getSuperclass());
                     } else {
                         System.out.println();
                         System.out.println("Вы ввели некорректно значение!  Введите цифру в диапазоне от: " + start
