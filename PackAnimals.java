@@ -8,7 +8,6 @@ public abstract class PackAnimals extends Animals {
     protected String name;
     protected LocalDate dateOfBirthDay = LocalDate.now();
     protected String formattedString;
-    protected List<String> commands = new ArrayList<>();
 
     protected PackAnimals() {
         this.animalClass = "PackAnimal";

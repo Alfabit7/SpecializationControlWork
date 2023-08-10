@@ -76,13 +76,29 @@ public class Menu {
                     }
                     break;
                 case 3:
-                    System.out.println("Введите индекс нужного животного: ");
-                    // int indx = in.nextInt();
-                    // arr.showAnimal(indx);
+                    start = 0;
+                    end = arr.getSizeArr();
+                    System.out.println("Вы ввели некорректно значение!  Введите цифру в диапазоне от: " + start
+                            + " до " + end);
                     inputUser = in.nextLine();
-                    // end = arrSize;
                     idx = ValidationInput(inputUser, start, end);
+
+                    if (checkedSizeArr(idx, start, end)) {
+                        System.out.println();
+                        System.out.println("Животное: " + arr.getElemet(idx).getClass().getName());
+                        System.out.print("Умеет выполнять эти команды: ");
+                        elAnimal = arr.getElemet(idx);
+                        ((Animals) elAnimal).showCommands();
+                        System.out.println();
+
+                    } else {
+                        System.out.println();
+                        System.out.println("Вы ввели некорректно значение!  Введите цифру в диапазоне от: " + start
+                                + " до " + end);
+                        System.out.println();
+                    }
                     break;
+
                 case 4:
                     arr.showAll();
                     break;

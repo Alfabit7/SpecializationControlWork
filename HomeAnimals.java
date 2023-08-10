@@ -8,7 +8,6 @@ public abstract class HomeAnimals extends Animals {
     protected String name;
     protected LocalDate dateOfBirthDay = LocalDate.now();
     protected String formattedString;
-    protected List<String> commands = new ArrayList<>();
 
     protected HomeAnimals() {
         this.animalClass = "HomeAnimal";
