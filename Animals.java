@@ -15,6 +15,10 @@ public abstract class Animals {
         this.id = UUID.randomUUID().toString();
     }
 
+    protected void setClassAnimal(String inputClass) {
+        this.animalClass = inputClass;
+    }
+
     @Override
     public String toString() {
         return String.format("id: %s: ", id);

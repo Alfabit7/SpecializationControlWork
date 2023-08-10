@@ -4,6 +4,10 @@ import java.util.List;
 public class Zoo {
     private List<Animals> animals = new ArrayList<>();
 
+    public int getSizeArr() {
+        return animals.size();
+    }
+
     public void add(Animals item) {
         this.animals.add(item);
     }
@@ -21,4 +25,9 @@ public class Zoo {
             System.out.println(animal);
         }
     }
+
+    public Object getElemet(int idx) {
+        return animals.get(idx);
+    }
+
 }
