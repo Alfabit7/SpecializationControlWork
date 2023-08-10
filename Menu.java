@@ -44,12 +44,6 @@ public class Menu {
                         case 6:
                             arr.add(new Donkey());
                             break;
-                        case 7:
-                            // menu(storage);
-                        case -1:
-                            System.out.println("!!!!!!in.close()");
-                            in.close();
-                            break;
                         default:
                             break;
                     }
@@ -130,10 +124,9 @@ public class Menu {
                     }
 
                 case 6:
-                    // arr.voiceAll();
                     break;
                 case 7:
-                    // in.close();
+                    in.nextLine();
                     break;
                 default:
                     menu(arr);
