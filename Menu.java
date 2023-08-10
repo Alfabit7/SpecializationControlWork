@@ -42,7 +42,6 @@ public class Menu {
                             arr.add(new Donkey());
                             break;
                         case 7:
-                            // menu(storage);
                         default:
                             break;
                     }
